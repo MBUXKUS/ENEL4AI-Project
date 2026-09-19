@@ -1,0 +1,55 @@
+Model: efficientnet_v2_s | classes: ['Formalin-mixed', 'Fresh', 'Rotten']
+Model params: 20,181,331
+Args: {'model': 'efficientnet_v2_s', 'image_size': 260, 'batch_size': 32, 'freeze_epochs': 3, 'partial_unfreeze_epochs': 5, 'partial_unfreeze_fraction': 0.3, 'finetune_epochs': 20, 'head_lr': 0.001, 'partial_lr': 0.0003, 'finetune_lr': 0.0001, 'label_smoothing': 0.1, 'mixup_alpha': 0.2, 'num_workers': 4, 'seed': 42}
+
+[head 1/3] train loss 0.8939 acc 51.5% | valid loss 0.8922 acc 61.8% | lr 1.00e-03
+[head 2/3] train loss 0.8241 acc 53.1% | valid loss 0.8874 acc 61.2% | lr 1.00e-03
+[head 3/3] train loss 0.7857 acc 55.7% | valid loss 0.8493 acc 65.4% | lr 1.00e-03
+[partial 1/5] train loss 0.6621 acc 60.3% | valid loss 0.8653 acc 67.1% | lr 3.00e-04
+[partial 2/5] train loss 0.5418 acc 64.7% | valid loss 0.8201 acc 71.4% | lr 3.00e-04
+[partial 3/5] train loss 0.5391 acc 64.9% | valid loss 0.8760 acc 72.3% | lr 3.00e-04
+[partial 4/5] train loss 0.5199 acc 63.3% | valid loss 0.9768 acc 69.2% | lr 3.00e-04
+[partial 5/5] train loss 0.5204 acc 69.1% | valid loss 0.8280 acc 71.2% | lr 3.00e-04
+[finetune 1/20] train loss 0.4591 acc 63.1% | valid loss 0.8158 acc 73.8% | lr 1.00e-04
+[finetune 2/20] train loss 0.4572 acc 68.1% | valid loss 0.7980 acc 74.4% | lr 1.00e-04
+[finetune 3/20] train loss 0.4723 acc 66.2% | valid loss 0.7370 acc 76.6% | lr 1.00e-04
+[finetune 4/20] train loss 0.4637 acc 66.6% | valid loss 0.7514 acc 77.1% | lr 1.00e-04
+[finetune 5/20] train loss 0.4468 acc 68.8% | valid loss 0.7587 acc 75.8% | lr 1.00e-04
+[finetune 6/20] train loss 0.4337 acc 71.2% | valid loss 0.7387 acc 76.8% | lr 1.00e-04
+[finetune 7/20] train loss 0.4132 acc 68.4% | valid loss 0.8007 acc 76.2% | lr 1.00e-04
+[finetune 8/20] train loss 0.4391 acc 66.2% | valid loss 0.7960 acc 74.0% | lr 5.00e-05
+[finetune 9/20] train loss 0.4536 acc 64.3% | valid loss 0.8169 acc 76.5% | lr 5.00e-05
+[finetune 10/20] train loss 0.4281 acc 72.5% | valid loss 0.8260 acc 74.9% | lr 5.00e-05
+[finetune 11/20] train loss 0.4231 acc 65.6% | valid loss 0.8055 acc 75.1% | lr 5.00e-05
+[finetune 12/20] train loss 0.4168 acc 66.4% | valid loss 0.8100 acc 76.1% | lr 2.50e-05
+[finetune 13/20] train loss 0.4238 acc 65.4% | valid loss 0.8135 acc 76.2% | lr 2.50e-05
+[finetune 14/20] train loss 0.4364 acc 68.3% | valid loss 0.7888 acc 77.2% | lr 2.50e-05
+[finetune 15/20] train loss 0.4321 acc 67.4% | valid loss 0.7979 acc 76.6% | lr 2.50e-05
+[finetune 16/20] train loss 0.4071 acc 69.3% | valid loss 0.7905 acc 76.9% | lr 2.50e-05
+[finetune 17/20] train loss 0.4484 acc 67.0% | valid loss 0.8218 acc 75.0% | lr 2.50e-05
+[finetune 18/20] train loss 0.4265 acc 66.9% | valid loss 0.8127 acc 75.9% | lr 1.25e-05
+[finetune 19/20] train loss 0.4160 acc 71.6% | valid loss 0.8548 acc 74.1% | lr 1.25e-05
+[finetune 20/20] train loss 0.4164 acc 64.5% | valid loss 0.7912 acc 76.4% | lr 1.25e-05
+
+Saved training curves to C:\Users\kevol\Desktop\AI_Project\AI_Project\reports\figures\training_curves_efficientnet_v2_s_condition.png
+
+Best valid accuracy: 77.2% (epoch 22, finetune phase)
+Per-class valid metrics (best epoch, 22):
+  class                            recall  precision       f1
+  Formalin-mixed                    97.3%      59.4%    73.7%
+  Fresh                             45.3%      92.2%    60.7%
+  Rotten                            95.4%      98.5%    96.9%
+
+Test accuracy (no TTA): 82.6%
+Per-class test metrics (no TTA):
+  class                            recall  precision       f1
+  Formalin-mixed                    88.6%      75.0%    81.2%
+  Fresh                             69.2%      82.0%    75.0%
+  Rotten                            90.3%      95.9%    93.0%
+
+Test accuracy (with TTA): 83.0%
+Per-class test metrics (with TTA):
+  class                            recall  precision       f1
+  Formalin-mixed                    88.6%      76.1%    81.9%
+  Fresh                             70.4%      82.5%    75.9%
+  Rotten                            90.3%      94.8%    92.5%

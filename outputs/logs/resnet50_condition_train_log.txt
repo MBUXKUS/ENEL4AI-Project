@@ -1,0 +1,30 @@
+Model: resnet50 | classes: ['Formalin-mixed', 'Fresh', 'Rotten']
+Model params: 23,514,179
+Args: {'model': 'resnet50', 'image_size': 260, 'batch_size': 32, 'freeze_epochs': 1, 'partial_unfreeze_epochs': 1, 'partial_unfreeze_fraction': 0.3, 'finetune_epochs': 1, 'head_lr': 0.001, 'partial_lr': 0.0003, 'finetune_lr': 0.0001, 'label_smoothing': 0.1, 'mixup_alpha': 0.2, 'num_workers': 0, 'seed': 42}
+
+[head 1/1] train loss 0.8706 acc 54.5% | valid loss 0.8164 acc 63.2% | lr 1.00e-03
+[partial 1/1] train loss 0.6020 acc 60.1% | valid loss 0.7505 acc 70.5% | lr 3.00e-04
+[finetune 1/1] train loss 0.5257 acc 64.3% | valid loss 0.7771 acc 71.4% | lr 1.00e-04
+
+Saved training curves to C:\Users\kevol\Desktop\AI_Project\AI_Project\reports\figures\training_curves_resnet50_condition.png
+
+Best valid accuracy: 71.4% (epoch 3, finetune phase)
+Per-class valid metrics (best epoch, 3):
+  class                            recall  precision       f1
+  Formalin-mixed                    88.9%      54.1%    67.3%
+  Fresh                             36.9%      75.6%    49.6%
+  Rotten                            95.2%      98.3%    96.7%
+
+Test accuracy (no TTA): 97.5%
+Per-class test metrics (no TTA):
+  class                            recall  precision       f1
+  Formalin-mixed                    97.6%      96.2%    96.9%
+  Fresh                             97.2%      97.0%    97.1%
+  Rotten                            97.6%      99.4%    98.5%
+
+Test accuracy (with TTA): 97.9%
+Per-class test metrics (with TTA):
+  class                            recall  precision       f1
+  Formalin-mixed                    98.2%      96.5%    97.3%
+  Fresh                             97.2%      98.0%    97.6%
+  Rotten                            98.5%      99.4%    98.9%
